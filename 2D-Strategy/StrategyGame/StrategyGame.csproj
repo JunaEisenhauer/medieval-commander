@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81F4E07C-CDE2-443D-ABE9-5C88111F0CDE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>StrategyGame</RootNamespace>
+    <AssemblyName>StrategyGame</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>C:\Users\Juna\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\StrategyGame-Test\StrategyGame-Test.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\StrategyGame.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\StrategyGame-Test\StrategyGame-Test.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DB5446CCB38D1498258DF42D4780704C7F3CB154</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>StrategyGame_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Magick.NET-Q8-AnyCPU, Version=7.13.1.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q8-AnyCPU.7.13.1\lib\net40\Magick.NET-Q8-AnyCPU.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.9.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=3.0.1.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.0.1\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TiledSharp, Version=0.15.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TiledSharp.1.0.1\lib\netstandard2.0\TiledSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Components\DrawAnimationComponent.cs" />
+    <Compile Include="Model\Components\DrawTextComponent.cs" />
+    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Model\Game\Components\AiComponent.cs" />
+    <Compile Include="Model\Game\Components\AttackComponent.cs" />
+    <Compile Include="Model\Game\Components\BuyArmyComponent.cs" />
+    <Compile Include="Model\Components\ButtonComponent.cs" />
+    <Compile Include="Model\Game\Components\CaptureComponent.cs" />
+    <Compile Include="Model\Game\Components\CaptureGoldComponent.cs" />
+    <Compile Include="Model\Game\Components\CollisionComponent.cs" />
+    <Compile Include="Model\Components\DrawQuadComponent.cs" />
+    <Compile Include="Model\Components\DrawCircleComponent.cs" />
+    <Compile Include="Model\Components\DrawTextureComponent.cs" />
+    <Compile Include="Model\Game\Components\GoldDisplayComponent.cs" />
+    <Compile Include="Model\Game\Components\HealComponent.cs" />
+    <Compile Include="Model\Game\Components\HealerComponent.cs" />
+    <Compile Include="Model\Game\Components\HealthComponent.cs" />
+    <Compile Include="Model\Game\Components\HealthDisplayComponent.cs" />
+    <Compile Include="Model\Game\Components\MoveComponent.cs" />
+    <Compile Include="Model\Game\Components\MoveRandomComponent.cs" />
+    <Compile Include="Model\Game\Components\OwnerComponent.cs" />
+    <Compile Include="Model\Game\Components\PathfindingComponent.cs" />
+    <Compile Include="Model\Game\Components\ProduceGoldComponent.cs" />
+    <Compile Include="Model\Game\Components\ProjectileComponent.cs" />
+    <Compile Include="Model\Game\Components\RelativeComponent.cs" />
+    <Compile Include="Model\Game\Components\SelectComponent.cs" />
+    <Compile Include="Model\Game\Components\SpawnComponent.cs" />
+    <Compile Include="Model\Game\Components\WinComponent.cs" />
+    <Compile Include="Model\Game\GameEntityFactory.cs" />
+    <Compile Include="Model\Game\GameLayer.cs" />
+    <Compile Include="Model\Game\GameScene.cs" />
+    <Compile Include="Model\IEntityFactory.cs" />
+    <Compile Include="Model\Game\IGameEntityFactory.cs" />
+    <Compile Include="Model\Game\IUpdatable.cs" />
+    <Compile Include="Model\Menu\Components\ClickChangeSceneComponent.cs" />
+    <Compile Include="Model\Menu\GameOverScene.cs" />
+    <Compile Include="Model\Menu\Level Selection\LevelSelection.cs" />
+    <Compile Include="Model\Menu\MenuLayer.cs" />
+    <Compile Include="Model\Menu\MenuEntityFactory.cs" />
+    <Compile Include="Model\Menu\IMenuEntityFactory.cs" />
+    <Compile Include="Model\Menu\StartMenuScene.cs" />
+    <Compile Include="Service\AI\AIService.cs" />
+    <Compile Include="Service\AI\AiType.cs" />
+    <Compile Include="Service\AI\IAIService.cs" />
+    <Compile Include="Service\GameObjectService.cs" />
+    <Compile Include="Service\GameStateService.cs" />
+    <Compile Include="Service\GoldService.cs" />
+    <Compile Include="Service\IGameStateService.cs" />
+    <Compile Include="Service\IGameObjectService.cs" />
+    <Compile Include="Service\IGoldService.cs" />
+    <Compile Include="Service\IOwnerColorService.cs" />
+    <Compile Include="Service\IRandomService.cs" />
+    <Compile Include="Service\ISceneService.cs" />
+    <Compile Include="Service\OwnerColorService.cs" />
+    <Compile Include="Service\Pathfinding\IGraph.cs" />
+    <Compile Include="Service\Pathfinding\IPathfinderService.cs" />
+    <Compile Include="Service\Pathfinding\IPriorityQueue.cs" />
+    <Compile Include="Service\Pathfinding\MinHeap.cs" />
+    <Compile Include="Service\Pathfinding\NavMesh.cs" />
+    <Compile Include="Service\Pathfinding\Pathfinder.cs" />
+    <Compile Include="Model\IComponent.cs" />
+    <Compile Include="Model\IDrawable.cs" />
+    <Compile Include="Model\IEntity.cs" />
+    <Compile Include="Model\IScene.cs" />
+    <Compile Include="Controller\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\FileResourceService.cs" />
+    <Compile Include="Service\IFileResourceService.cs" />
+    <Compile Include="Service\IMapService.cs" />
+    <Compile Include="Service\IService.cs" />
+    <Compile Include="Service\MapService.cs" />
+    <Compile Include="Service\RandomService.cs" />
+    <Compile Include="Service\SceneService.cs" />
+    <Compile Include="Service\Sound\AudioPlaybackEngine.cs" />
+    <Compile Include="Service\Sound\AudioService.cs" />
+    <Compile Include="Service\Sound\AutoDisposeFileReader.cs" />
+    <Compile Include="Service\Sound\CachedSound.cs" />
+    <Compile Include="Service\Sound\CachedSoundSampleProvider.cs" />
+    <Compile Include="Service\Sound\IAudioService.cs" />
+    <Compile Include="Service\TimeService.cs" />
+    <Compile Include="Service\View\Job\CircleJob.cs" />
+    <Compile Include="Service\View\Job\IDrawJob.cs" />
+    <Compile Include="Service\View\GraphicsService.cs" />
+    <Compile Include="Service\View\IGraphicsService.cs" />
+    <Compile Include="Service\IKeystateService.cs" />
+    <Compile Include="Service\IServiceProvider.cs" />
+    <Compile Include="Service\ITimeService.cs" />
+    <Compile Include="Service\KeystateService.cs" />
+    <Compile Include="Service\ServiceProvider.cs" />
+    <Compile Include="Service\View\Job\QuadJob.cs" />
+    <Compile Include="Service\View\Job\TextureJob.cs" />
+    <Compile Include="Service\View\Rectangle.cs" />
+    <Compile Include="Service\View\Texture2D.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Tilemap\Map2.tmx" />
+    <None Include="StrategyGame.ruleset" />
+    <None Include="App.config" />
+    <None Include="Content\Tilemap\Map1.tmx" />
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="StrategyGame_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Archer\Archer-Button.png" />
+    <Content Include="Content\Archer\Archer-Enemy-0.png" />
+    <Content Include="Content\Archer\Archer-Enemy-1.png" />
+    <Content Include="Content\Archer\Archer-Enemy-10.png" />
+    <Content Include="Content\Archer\Archer-Enemy-11.png" />
+    <Content Include="Content\Archer\Archer-Enemy-12.png" />
+    <Content Include="Content\Archer\Archer-Enemy-13.png" />
+    <Content Include="Content\Archer\Archer-Enemy-14.png" />
+    <Content Include="Content\Archer\Archer-Enemy-15.png" />
+    <Content Include="Content\Archer\Archer-Enemy-2.png" />
+    <Content Include="Content\Archer\Archer-Enemy-3.png" />
+    <Content Include="Content\Archer\Archer-Enemy-4.png" />
+    <Content Include="Content\Archer\Archer-Enemy-5.png" />
+    <Content Include="Content\Archer\Archer-Enemy-6.png" />
+    <Content Include="Content\Archer\Archer-Enemy-7.png" />
+    <Content Include="Content\Archer\Archer-Enemy-8.png" />
+    <Content Include="Content\Archer\Archer-Enemy-9.png" />
+    <Content Include="Content\Archer\Archer-Enemy-Idle.png" />
+    <Content Include="Content\Archer\Archer-Player-0.png" />
+    <Content Include="Content\Archer\Archer-Player-1.png" />
+    <Content Include="Content\Archer\Archer-Player-10.png" />
+    <Content Include="Content\Archer\Archer-Player-11.png" />
+    <Content Include="Content\Archer\Archer-Player-12.png" />
+    <Content Include="Content\Archer\Archer-Player-13.png" />
+    <Content Include="Content\Archer\Archer-Player-14.png" />
+    <Content Include="Content\Archer\Archer-Player-15.png" />
+    <Content Include="Content\Archer\Archer-Player-2.png" />
+    <Content Include="Content\Archer\Archer-Player-3.png" />
+    <Content Include="Content\Archer\Archer-Player-4.png" />
+    <Content Include="Content\Archer\Archer-Player-5.png" />
+    <Content Include="Content\Archer\Archer-Player-6.png" />
+    <Content Include="Content\Archer\Archer-Player-7.png" />
+    <Content Include="Content\Archer\Archer-Player-8.png" />
+    <Content Include="Content\Archer\Archer-Player-9.png" />
+    <Content Include="Content\Archer\Archer-Player-Idle.png" />
+    <Content Include="Content\Archer\Enenemy-Base.png" />
+    <Content Include="Content\Archer\ezgif-4-fa0403dbbee0.gif" />
+    <Content Include="Content\Archer\Player-Base.png" />
+    <Content Include="Content\Catapult\Catapult-Button.png" />
+    <Content Include="Content\Catapult\Catapult-Enemy.png" />
+    <Content Include="Content\Catapult\Catapult-Player.png" />
+    <Content Include="Content\Archer\Archer-Button.png" />
+    <Content Include="Content\Archer\Archer-Enemy-0.png" />
+    <Content Include="Content\Archer\Archer-Enemy-1.png" />
+    <Content Include="Content\Archer\Archer-Enemy-10.png" />
+    <Content Include="Content\Archer\Archer-Enemy-11.png" />
+    <Content Include="Content\Archer\Archer-Enemy-12.png" />
+    <Content Include="Content\Archer\Archer-Enemy-13.png" />
+    <Content Include="Content\Archer\Archer-Enemy-14.png" />
+    <Content Include="Content\Archer\Archer-Enemy-15.png" />
+    <Content Include="Content\Archer\Archer-Enemy-2.png" />
+    <Content Include="Content\Archer\Archer-Enemy-3.png" />
+    <Content Include="Content\Archer\Archer-Enemy-4.png" />
+    <Content Include="Content\Archer\Archer-Enemy-5.png" />
+    <Content Include="Content\Archer\Archer-Enemy-6.png" />
+    <Content Include="Content\Archer\Archer-Enemy-7.png" />
+    <Content Include="Content\Archer\Archer-Enemy-8.png" />
+    <Content Include="Content\Archer\Archer-Enemy-9.png" />
+    <Content Include="Content\Archer\Archer-Enemy-Idle.png" />
+    <Content Include="Content\Archer\Archer-Player-0.png" />
+    <Content Include="Content\Archer\Archer-Player-1.png" />
+    <Content Include="Content\Archer\Archer-Player-10.png" />
+    <Content Include="Content\Archer\Archer-Player-11.png" />
+    <Content Include="Content\Archer\Archer-Player-12.png" />
+    <Content Include="Content\Archer\Archer-Player-13.png" />
+    <Content Include="Content\Archer\Archer-Player-14.png" />
+    <Content Include="Content\Archer\Archer-Player-15.png" />
+    <Content Include="Content\Archer\Archer-Player-2.png" />
+    <Content Include="Content\Archer\Archer-Player-3.png" />
+    <Content Include="Content\Archer\Archer-Player-4.png" />
+    <Content Include="Content\Archer\Archer-Player-5.png" />
+    <Content Include="Content\Archer\Archer-Player-6.png" />
+    <Content Include="Content\Archer\Archer-Player-7.png" />
+    <Content Include="Content\Archer\Archer-Player-8.png" />
+    <Content Include="Content\Archer\Archer-Player-9.png" />
+    <Content Include="Content\Archer\Archer-Player-Idle.png" />
+    <Content Include="Content\Archer\Enenemy-Base.png" />
+    <Content Include="Content\Archer\ezgif-4-fa0403dbbee0.gif" />
+    <Content Include="Content\Archer\Player-Base.png" />
+    <Content Include="Content\cursor_shiny.png" />
+    <Content Include="Content\Font\berry-rotunda-sprite-sheet.png" />
+    <Content Include="Content\destinationFlag.png" />
+    <Content Include="Content\Knight\Enenemy-Base.png" />
+    <Content Include="Content\Knight\ezgif-4-860c88ed2ab9.gif" />
+    <Content Include="Content\Knight\Knight-Button.png" />
+    <Content Include="Content\Knight\Knight-Enemy-0.png" />
+    <Content Include="Content\Knight\Knight-Enemy-1.png" />
+    <Content Include="Content\Knight\Knight-Enemy-10.png" />
+    <Content Include="Content\Knight\Knight-Enemy-11.png" />
+    <Content Include="Content\Knight\Knight-Enemy-12.png" />
+    <Content Include="Content\Knight\Knight-Enemy-13.png" />
+    <Content Include="Content\Knight\Knight-Enemy-14.png" />
+    <Content Include="Content\Knight\Knight-Enemy-15.png" />
+    <Content Include="Content\Knight\Knight-Enemy-16.png" />
+    <Content Include="Content\Knight\Knight-Enemy-17.png" />
+    <Content Include="Content\Knight\Knight-Enemy-2.png" />
+    <Content Include="Content\Knight\Knight-Enemy-3.png" />
+    <Content Include="Content\Knight\Knight-Enemy-4.png" />
+    <Content Include="Content\Knight\Knight-Enemy-5.png" />
+    <Content Include="Content\Knight\Knight-Enemy-6.png" />
+    <Content Include="Content\Knight\Knight-Enemy-7.png" />
+    <Content Include="Content\Knight\Knight-Enemy-8.png" />
+    <Content Include="Content\Knight\Knight-Enemy-9.png" />
+    <Content Include="Content\Knight\Knight-Player-0.png" />
+    <Content Include="Content\Knight\Knight-Player-1.png" />
+    <Content Include="Content\Knight\Knight-Player-10.png" />
+    <Content Include="Content\Knight\Knight-Player-11.png" />
+    <Content Include="Content\Knight\Knight-Player-12.png" />
+    <Content Include="Content\Knight\Knight-Player-13.png" />
+    <Content Include="Content\Knight\Knight-Player-14.png" />
+    <Content Include="Content\Knight\Knight-Player-15.png" />
+    <Content Include="Content\Knight\Knight-Player-16.png" />
+    <Content Include="Content\Knight\Knight-Player-17.png" />
+    <Content Include="Content\Knight\Knight-Player-2.png" />
+    <Content Include="Content\Knight\Knight-Player-3.png" />
+    <Content Include="Content\Knight\Knight-Player-4.png" />
+    <Content Include="Content\Knight\Knight-Player-5.png" />
+    <Content Include="Content\Knight\Knight-Player-6.png" />
+    <Content Include="Content\Knight\Knight-Player-7.png" />
+    <Content Include="Content\Knight\Knight-Player-8.png" />
+    <Content Include="Content\Knight\Knight-Player-9.png" />
+    <Content Include="Content\Knight\Knight-Player-Idle.png" />
+    <Content Include="Content\Knight\Knight-Enemy-Idle.png" />
+    <Content Include="Content\Knight\Player-Base.png" />
+    <Content Include="Content\DestinationFlag.png" />
+    <Content Include="Content\Fortress\Fortress-Player.png" />
+    <Content Include="Content\Fortress\Fortress-Enemy.png" />
+    <Content Include="Content\Ingot.png" />
+    <Content Include="Content\Knight\Enenemy-Base.png" />
+    <Content Include="Content\Knight\ezgif-4-860c88ed2ab9.gif" />
+    <Content Include="Content\Knight\Knight-Button.png" />
+    <Content Include="Content\Knight\Knight-Enemy-0.png" />
+    <Content Include="Content\Knight\Knight-Enemy-1.png" />
+    <Content Include="Content\Knight\Knight-Enemy-10.png" />
+    <Content Include="Content\Knight\Knight-Enemy-11.png" />
+    <Content Include="Content\Knight\Knight-Enemy-12.png" />
+    <Content Include="Content\Knight\Knight-Enemy-13.png" />
+    <Content Include="Content\Knight\Knight-Enemy-14.png" />
+    <Content Include="Content\Knight\Knight-Enemy-15.png" />
+    <Content Include="Content\Knight\Knight-Enemy-16.png" />
+    <Content Include="Content\Knight\Knight-Enemy-17.png" />
+    <Content Include="Content\Knight\Knight-Enemy-2.png" />
+    <Content Include="Content\Knight\Knight-Enemy-3.png" />
+    <Content Include="Content\Knight\Knight-Enemy-4.png" />
+    <Content Include="Content\Knight\Knight-Enemy-5.png" />
+    <Content Include="Content\Knight\Knight-Enemy-6.png" />
+    <Content Include="Content\Knight\Knight-Enemy-7.png" />
+    <Content Include="Content\Knight\Knight-Enemy-8.png" />
+    <Content Include="Content\Knight\Knight-Enemy-9.png" />
+    <Content Include="Content\Knight\Knight-Player-0.png" />
+    <Content Include="Content\Knight\Knight-Player-1.png" />
+    <Content Include="Content\Knight\Knight-Player-10.png" />
+    <Content Include="Content\Knight\Knight-Player-11.png" />
+    <Content Include="Content\Knight\Knight-Player-12.png" />
+    <Content Include="Content\Knight\Knight-Player-13.png" />
+    <Content Include="Content\Knight\Knight-Player-14.png" />
+    <Content Include="Content\Knight\Knight-Player-15.png" />
+    <Content Include="Content\Knight\Knight-Player-16.png" />
+    <Content Include="Content\Knight\Knight-Player-17.png" />
+    <Content Include="Content\Knight\Knight-Player-2.png" />
+    <Content Include="Content\Knight\Knight-Player-3.png" />
+    <Content Include="Content\Knight\Knight-Player-4.png" />
+    <Content Include="Content\Knight\Knight-Player-5.png" />
+    <Content Include="Content\Knight\Knight-Player-6.png" />
+    <Content Include="Content\Knight\Knight-Player-7.png" />
+    <Content Include="Content\Knight\Knight-Player-8.png" />
+    <Content Include="Content\Knight\Knight-Player-9.png" />
+    <Content Include="Content\Knight\Knight-Player-Idle.png" />
+    <Content Include="Content\Knight\Knight-Enemy-Idle.png" />
+    <Content Include="Content\Knight\Player-Base.png" />
+    <Content Include="Content\Menu\continueButton.png" />
+    <Content Include="Content\Menu\exitButton.png" />
+    <Content Include="Content\Menu\gameOver.png" />
+    <Content Include="Content\Menu\levelButton1.png" />
+    <Content Include="Content\Menu\levelButton2.png" />
+    <Content Include="Content\Menu\mainMenuButton.png" />
+    <Content Include="Content\Menu\menuBackground.png" />
+    <Content Include="Content\Menu\okButton.png" />
+    <Content Include="Content\Menu\returnButton.png" />
+    <Content Include="Content\Menu\startButton.png" />
+    <Content Include="Content\Menu\youWin.png" />
+    <Content Include="Content\Sounds\command.mp3" />
+    <Content Include="Content\Sounds\dead.mp3" />
+    <Content Include="Content\Sounds\intro.mp3" />
+    <Content Include="Content\Sounds\selected.mp3" />
+    <Content Include="Content\Tilemap\Meta.png" />
+    <Content Include="Content\Tilemap\mountains.png" />
+    <Content Include="Content\Tilemap\TilePictures\Fortress0.png" />
+    <Content Include="Content\Tilemap\TilePictures\Fortress1.png" />
+    <Content Include="Content\Tilemap\TilePictures\mountain_landscape.png" />
+    <Content Include="Content\Tilemap\TilePictures\snow.png" />
+    <Content Include="Content\Tilemap\TilePictures\Tower0.png" />
+    <Content Include="Content\Tilemap\TilePictures\Tower1.png" />
+    <Content Include="Content\Tilemap\tileset.png" />
+    <Content Include="Content\Tilemap\water.png" />
+    <Content Include="Content\Tower\Tower-Player.png" />
+    <Content Include="Content\Tower\Tower-Enemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Tilemap\Map1_old.tmx" />
+    <None Include="Content\Tilemap\Meta.tsx" />
+    <None Include="Content\Tilemap\mountains.tsx" />
+    <None Include="Content\Tilemap\tileset.tsx" />
+    <None Include="Content\Tilemap\water.tsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Content\Tilemap\Objects.tsx" />
+    <TypeScriptCompile Include="Content\Tilemap\Terrain-Snow.tsx" />
+    <TypeScriptCompile Include="Content\Tilemap\Terrain.tsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
